@@ -1,3 +1,5 @@
+[![](https://scdn.rapidapi.com/RapidAPI_banner.png)](https://rapidapi.com/package/Urlbox/functions?utm_source=RapidAPIGitHub_UrlboxFunctions&utm_medium=button&utm_content=RapidAPI_GitHub)
+
 # Urlbox Package
 Automate screenshots of any website
 * Domain: [urlbox.io](https://urlbox.io)
