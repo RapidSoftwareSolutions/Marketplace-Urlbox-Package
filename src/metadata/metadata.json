@@ -1,0 +1,231 @@
+{
+  "package": "Urlbox",
+  "tagline": "Urlbox API",
+  "description": "Automate screenshots of any website",
+  "image": "https://logo.clearbit.com/urlbox.io",
+  "repo": "https://github.com/RapidSoftwareSolutions/Marketplace-Urlbox-Package",
+  "keywords": [
+    "API",
+    "urlbox",
+    "url",
+    "screenshot"
+  ],
+  "accounts": {
+    "domain": "urlbox.io",
+    "credentials": [
+      "apiKey",
+      "apiSecret"
+    ]
+  },
+  "blocks": [{
+    "name": "getScreenshot",
+    "description": "Generate screenshot from url.",
+    "args": [{
+      "name": "apiKey",
+      "type": "credentials",
+      "info": "Your actual urlbox API key which you can get by registering for an account.",
+      "required": true
+    },
+      {
+        "name": "apiSecret",
+        "type": "credentials",
+        "info": "Your actual urlbox API secret which you can get by registering for an account.",
+        "required": true
+      },
+      {
+        "name": "format",
+        "type": "Select",
+        "options": ["png", "jpg"],
+        "info": "Should be one of either png or jpg depending on which format you want the resulting image",
+        "required": true
+      },
+      {
+        "name": "url",
+        "type": "String",
+        "info": "The URL of the website you want to screenshot.",
+        "required": true
+      },
+      {
+        "name": "width",
+        "type": "Number",
+        "info": "Viewport width of the browser in pixels. Default: 1280.",
+        "required": false
+      },
+      {
+        "name": "height",
+        "type": "Number",
+        "info": "Viewport height of the browser in pixels. Default: 1024.",
+        "required": false
+      },
+      {
+        "name": "selector",
+        "type": "String",
+        "info": "Take a screenshot of the element that matches this selector.",
+        "required": false
+      },
+      {
+        "name": "thumbWidth",
+        "type": "Number",
+        "info": "Width in pixels of the generated thumbnail, leave off for full-size screenshot.",
+        "required": false
+      },
+      {
+        "name": "userAgent",
+        "type": "String",
+        "info": "User-Agent string used to emulate a particular client.",
+        "required": false
+      },
+      {
+        "name": "acceptLang",
+        "type": "String",
+        "info": "Sets an Accept-Language header on requests to the target URL. Default: en-US.",
+        "required": false
+      },
+      {
+        "name": "authorization",
+        "type": "String",
+        "info": "Sets an Authorization header on requests to the target URL.",
+        "required": false
+      },
+      {
+        "name": "cookie",
+        "type": "String",
+        "info": "Set a cookie value before taking a screenshot. E.g. OptIn=true. Can be set multiple times to set more than one cookie.",
+        "required": false
+      },
+      {
+        "name": "delay",
+        "type": "Number",
+        "info": "Amount of time to wait in milliseconds before urlbox takes the screenshot.",
+        "required": false
+      },
+      {
+        "name": "waitFor",
+        "type": "String",
+        "info": "Waits for the element specified by this selector to be visible on the page before taking a screenshot.",
+        "required": false
+      },
+      {
+        "name": "timeout",
+        "type": "Number",
+        "info": "Amount of time to wait in milliseconds for the website at url to respond. Default: 30000",
+        "required": false
+      },
+      {
+        "name": "fullPage",
+        "type": "Boolean",
+        "info": "Amount of time to wait in milliseconds for the website at url to respond. Default: false",
+        "required": false
+      },
+      {
+        "name": "flash",
+        "type": "Boolean",
+        "info": "Enable the flash plugin for flash using websites. Default: false",
+        "required": false
+      },
+      {
+        "name": "force",
+        "type": "Boolean",
+        "info": "Take a fresh screenshot instead of getting a cached version. Default: false",
+        "required": false
+      },
+      {
+        "name": "ttl",
+        "type": "Number",
+        "info": "Short for 'time to live'. Number of seconds to keep a screenshot in the cache. Note the default is also the maximum value for this option. Default: 2592000",
+        "required": false
+      },
+      {
+        "name": "quality",
+        "type": "Number",
+        "info": "JPEG only - image quality of resulting screenshot (0-100). Default: 80",
+        "required": false
+      },
+      {
+        "name": "disableJs",
+        "type": "Boolean",
+        "info": "Turn off javascript on target url to prevent popups. Default: false",
+        "required": false
+      },
+      {
+        "name": "retina",
+        "type": "Boolean",
+        "info": "Take a 'retina' or high definition screenshot equivalent to setting a device pixel ratio of 2.0 or @2x. Please note that retina screenshots will be double the normal dimensions and will normally take slightly longer to process due to the much bigger image size. Default: false",
+        "required": false
+      },
+      {
+        "name": "transparent",
+        "type": "Boolean",
+        "info": "If a website has no background color set, the image will have a transparent background (PNG only). Default: false",
+        "required": false
+      },
+      {
+        "name": "click",
+        "type": "String",
+        "info": "Element selector that is clicked before taking a screenshot e.g. #clickme would click the element with id=`clickme`.",
+        "required": false
+      },
+      {
+        "name": "hover",
+        "type": "String",
+        "info": "Element selector that is hovered before taking a screenshot e.g. #hoverme would hover over the element with id=`hoverme`.",
+        "required": false
+      },
+      {
+        "name": "bgColor",
+        "type": "String",
+        "info": "Hex code or css color string. Some websites don't set a body background colour, and will show up as transparent backgrounds with PNG or black when using JPG. Use this setting to set a background colour. If the website explicitly sets a transparent background on the html or body elements, this setting will be overridden.",
+        "required": false
+      },
+      {
+        "name": "cropWidth",
+        "type": "Number",
+        "info": "Crop the width of the screenshot to this size in pixels.",
+        "required": false
+      },
+      {
+        "name": "hideSelector",
+        "type": "String",
+        "info": "Hides all elements that match the element selector by setting their style to `display:none !important;`. Useful for hiding popups.",
+        "required": false
+      },
+      {
+        "name": "highlight",
+        "type": "String",
+        "info": "Word to highlight on the page before capturing a screenshot.",
+        "required": false
+      },
+      {
+        "name": "highlightfg",
+        "type": "String",
+        "info": "Text color of the highlighted word. Default: white",
+        "required": false
+      },
+      {
+        "name": "highlightbg",
+        "type": "String",
+        "info": "Text color of the highlighted word. Default: red",
+        "required": false
+      },
+      {
+        "name": "useS3",
+        "type": "Boolean",
+        "info": "Save the screenshot directly to the S3 bucket configured on your account. Default: false",
+        "required": false
+      }, {
+        "name": "s3Path",
+        "type": "Boolean",
+        "info": "The s3 path to save the screenshot to in your S3 bucket.",
+        "required": false
+      }
+
+    ],
+    "callbacks": [{
+      "name": "error",
+      "info": "Error"
+    }, {
+      "name": "success",
+      "info": "Success"
+    }]
+  }]
+}
